@@ -2,6 +2,7 @@
   "name": "@challenger-letalk/backend",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --inspect --respawn --transpile-only --ignore-watch node_modules src/server.ts",
