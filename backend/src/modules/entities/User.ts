@@ -7,7 +7,7 @@ class User {
   id?: string;
 
   @Column()
-  name: string;
+  nome: string;
 
   @Column()
   cpf: string;
@@ -19,7 +19,7 @@ class User {
   uf: string;
 
   @Column()
-  emprestimo: number;
+  emprestimo: string;
 
   @CreateDateColumn()
   created_at: Date;
