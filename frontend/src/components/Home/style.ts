@@ -1,8 +1,8 @@
 import styles from 'styled-components';
 
 export const Container = styles.div`
-  background: var(--background);
-
+  // background: var(--background);
+  background: black;
   h1 {
     color: var(--text_title);
     text-align: center;

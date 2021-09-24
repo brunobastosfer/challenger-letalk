@@ -3,8 +3,7 @@ import { useQuotation } from '../../hooks/useQuotation';
 import { Container, CardContainer } from './style';
 
 const Form = () => {
-  const { createUser, quotation } = useQuotation()
-  console.log(quotation);
+  const { createUser } = useQuotation()
 
   const [cpf, setCpf] = useState('');
   const [uf, setUf] = useState('');

@@ -19,6 +19,18 @@ class CreateUserUseCase {
       return 'error'
     
     if(uf === 'MG') {
+      // let parcela = Number(emprestimo) / parcelas
+      // let cliente = {
+      //   saldoDevedor: [],
+      //   juros: [],
+      //   saldoDevedorAjustado: [],
+      //   valorParcela: []
+      // };
+      // for(let index = 0; index < parcelas; index += 1) {
+      //   if(parcelas > 1 && parcela) {
+
+      //   }
+      // }
       return 1
     }
     

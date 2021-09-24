@@ -53,5 +53,4 @@ export const CardContainer = styles.div`
   box-shadow: 0 0 10px 0 #ECECEC;
   max-width: 967px;
   margin: auto;
-  align-content: center;
 `

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     --blue_ligth: #6933FF;
 
     --text_title: #8F99A6;
+    --text_price: #333333;
     --text_body: #969cb3;
 
     --shape: #FFFFFF;
