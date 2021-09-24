@@ -13,7 +13,7 @@ class CreateUserController {
       return response.status(400).json({value: 'BAD REQUEST'})
     }
 
-    return response.status(201).json({ value  })
+    return response.status(201).json({ value, parcelas, emprestimo })
   }
 }
 

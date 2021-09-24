@@ -32,8 +32,11 @@ export const QuotationProvider = ({ children } : QuotationProviderProps) => {
     const response = await api.post('users', {
       ...quotationInput,
     })
-    const { value } = response.data;
-    setQuotation(value);
+    const { value, parcelas, emprestimo } = response.data;
+    if(value === 'BAD REQUEST') {
+      setQuotation(value)
+    }
+    setQuotation([value, parcelas, emprestimo]);
   }
 
   return (
