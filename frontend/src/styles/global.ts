@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --shape: #FFFFFF;
 
-    --input_background: #e7e9ee
+    --input_background: #e7e9ee;
   }
 
   * {
@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
   }
 

@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { useQuotation } from '../../hooks/useQuotation';
+import { Container, CardContainer } from './style';
 
 const Form = () => {
   const { createUser, quotation } = useQuotation()
@@ -26,45 +27,47 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={ handleCreateNewUser }>
+    <CardContainer>
+      <Container onSubmit={ handleCreateNewUser }>
 
-      <input
-        type="text"
-        placeholder="NOME"
-        onChange={event => setNome(event.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="NOME"
+          onChange={event => setNome(event.target.value)}
+        />
 
-      <input
-        type="text"
-        placeholder="CPF"
-        onChange={event => setCpf(event.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="CPF"
+          onChange={event => setCpf(event.target.value)}
+        />
 
-      <input
-        type="text"
-        placeholder="UF"
-        onChange={event => setUf(event.target.value)}
-      />
+        <input
+          type="text"
+          placeholder="UF"
+          onChange={event => setUf(event.target.value)}
+        />
 
-      <input
-        placeholder="DATA DE NASCIMENTO"
-        onChange={event => setDataNascimento(event.target.value)}
-      />
+        <input
+          placeholder="DATA DE NASCIMENTO"
+          onChange={event => setDataNascimento(event.target.value)}
+        />
 
-      <input
-        placeholder="QUAL O VALOR DO EMPRÉSTIMO"
-        onChange={event => setEmprestimo(event.target.value)}
-      />
+        <input
+          placeholder="QUAL O VALOR DO EMPRÉSTIMO"
+          onChange={event => setEmprestimo(event.target.value)}
+        />
 
-      <input
-        placeholder="QUAL O VALOR DESEJA PAGAR POR MÊS"
-        onChange={event => setParcelas(+event.target.value)}
-      />
-      
-      <button type="submit">
-        Simular
-      </button>
-    </form>
+        <input
+          placeholder="QUAL O VALOR DESEJA PAGAR POR MÊS"
+          onChange={event => setParcelas(+event.target.value)}
+        />
+        
+        <button type="submit">
+          SIMULAR
+        </button>
+      </Container>
+    </CardContainer>
   )
 }
 
