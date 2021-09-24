@@ -1,10 +1,17 @@
 import React from 'react';
+import { Home } from './components/Home/Home';
+import { QuotationProvider } from './hooks/useQuotation';
+import { GlobalStyle } from './styles/global';
 
 function App(){
   return (
-    <div>
-      <h1>A</h1>
-    </div>
+    <QuotationProvider>
+
+      <Home />
+
+      <GlobalStyle />
+      
+    </QuotationProvider>
   );
 }
 

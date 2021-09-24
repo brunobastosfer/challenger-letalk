@@ -1,8 +1,8 @@
 FROM node
 
-WORKDIR /usr/challengerletalk/app
+WORKDIR /usr/challengerletalk/app/frontend
 
-COPY package*.json ./
+COPY package.json .
 
 RUN npm install
 

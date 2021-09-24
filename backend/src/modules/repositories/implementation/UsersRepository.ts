@@ -15,7 +15,8 @@ class UserRepository implements IUsersRepository {
       data_nascimento,
       cpf,
       emprestimo,
-      uf
+      uf,
+      parcelas
     })
     await this.repository.save(user)
   }
@@ -23,6 +24,11 @@ class UserRepository implements IUsersRepository {
   async list(): Promise<User[]> {
     const users = await this.repository.find();
     return users
+  }
+
+  async filterByName(cpf: string): Promise<User> {
+    const find = await this.repository.findOne({ cpf })
+    return find
   }
 }
 

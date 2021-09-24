@@ -1,8 +1,8 @@
 FROM node
 
-WORKDIR /usr/challengerletalk/app
+WORKDIR /usr/challengerletalk/app/backend
 
-COPY package.json ./
+COPY package.json .
 
 RUN npm install
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3333
 
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev"]

@@ -5,11 +5,15 @@ class CreateUserController {
   constructor(private createUserUseCase: CreateUserUseCase){}
 
   async handle(request: Request, response: Response): Promise<Response> {
-    const { nome, data_nascimento, cpf, emprestimo, uf } = request.body
+    const { nome, data_nascimento, cpf, emprestimo, uf, parcelas } = request.body
 
-    await this.createUserUseCase.execute({ nome, data_nascimento, cpf, emprestimo, uf  })
+    const value = await this.createUserUseCase.execute({ nome, data_nascimento, cpf, emprestimo, uf, parcelas  })
 
-    return response.status(201).json({ nome,data_nascimento,cpf,emprestimo,uf  })
+    if(value === 'error') {
+      return response.status(400).json({value: 'BAD REQUEST'})
+    }
+
+    return response.status(201).json({ value  })
   }
 }
 

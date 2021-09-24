@@ -21,6 +21,9 @@ class User {
   @Column()
   emprestimo: string;
 
+  @Column()
+  parcelas: number;
+
   @CreateDateColumn()
   created_at: Date;
 
