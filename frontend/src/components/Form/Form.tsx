@@ -55,7 +55,6 @@ const Form = () => {
 
         <input
           placeholder="DATA DE NASCIMENTO"
-          type="date"
           onChange={event => setDataNascimento(event.target.value)}
         />
 

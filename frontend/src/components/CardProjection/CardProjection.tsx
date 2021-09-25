@@ -36,7 +36,9 @@ const CardProjection = () => {
         <div>
           <span>VALOR REQUERIDO: </span>
           <span>
-          {new Intl.NumberFormat('pt-br', {
+          {
+          !total ? ''
+          : new Intl.NumberFormat('pt-br', {
               style: 'currency',
               currency: 'BRL'
             }).format(Number(total))}
@@ -49,7 +51,10 @@ const CardProjection = () => {
         <div>
           <span>VALOR DA PARCELA: </span>
           <span>
-            {new Intl.NumberFormat('pt-br', {
+            {
+            !parcela 
+            ? ''
+            : new Intl.NumberFormat('pt-br', {
               style: 'currency',
               currency: 'BRL'
             }).format(Number(parcela))}
@@ -61,8 +66,8 @@ const CardProjection = () => {
             {
               !totalParcelas[0]
               ? ''
-              : totalParcelas[0].devedor.length
-            } MESES
+              : `${totalParcelas[0].devedor.length} MESES`
+            }
           </span>
         </div>
         <div>
