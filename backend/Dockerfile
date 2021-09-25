@@ -1,13 +1,13 @@
 FROM node
 
-WORKDIR /app
+WORKDIR /server
 
-COPY package*.json /app/
+COPY package.json .
 
 RUN npm install
 
-COPY . /app/
+COPY . /server/
 
 EXPOSE 3333
 
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "dev"]
