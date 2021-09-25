@@ -16,9 +16,9 @@ const Form = () => {
     event.preventDefault();
 
     await createUser({
-      cpf,
-      data_nascimento: dataNascimento,
-      emprestimo,
+      cpf: cpf.toString(),
+      data_nascimento: dataNascimento.toString(),
+      emprestimo: emprestimo.toString(),
       nome,
       uf,
       parcelas,
@@ -55,16 +55,19 @@ const Form = () => {
 
         <input
           placeholder="DATA DE NASCIMENTO"
+          type="date"
           onChange={event => setDataNascimento(event.target.value)}
         />
 
         <input
           placeholder="QUAL O VALOR DO EMPRÉSTIMO"
+          type="number"
           onChange={event => setEmprestimo(event.target.value)}
         />
 
         <input
           placeholder="QUAL O VALOR DESEJA PAGAR POR MÊS"
+          type="number"
           onChange={event => setParcelas(+event.target.value)}
         />
         

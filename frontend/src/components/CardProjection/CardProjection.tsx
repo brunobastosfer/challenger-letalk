@@ -57,7 +57,13 @@ const CardProjection = () => {
         </div>
         <div>
           <span>TOTAL DE MESES PARA QUITAR: </span>
-          <span>R$ </span>
+          <span>
+            {
+              !totalParcelas[0]
+              ? ''
+              : totalParcelas[0].devedor.length
+            } MESES
+          </span>
         </div>
         <div>
           <span>TOTAL DE JUROS: </span>
