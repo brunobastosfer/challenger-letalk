@@ -9,6 +9,37 @@ interface IRequest {
   parcelas: number;
 }
 
+interface Debit {
+  saldoDevedor: number;
+  cota: number;
+  valorParcela: number;
+}
+
+const calculate = ({ cota, saldoDevedor, valorParcela }: Debit ) => {
+  let valorAjustado = saldoDevedor;
+  let cliente = {
+    juros: [],
+    devedor: [],
+    devedorAjustado: [],
+    mes: saldoDevedor / valorParcela,
+  } as any;
+
+  for(let index = 1; index <= cliente.mes+1; index+= 1) {
+    let jurosCalc = (cota / 100) * valorAjustado
+    if(valorAjustado >= valorParcela) {
+      cliente.juros.push(jurosCalc.toFixed(2))
+      cliente.devedorAjustado.push(valorAjustado + jurosCalc)
+      valorAjustado += jurosCalc
+      cliente.devedor.push(valorAjustado - valorParcela)
+      valorAjustado -= valorParcela
+    } else {
+      cliente.juros.push(jurosCalc.toFixed(2));
+      cliente.devedorAjustado.push(valorAjustado);
+    }
+  }
+  return cliente
+}
+
 class CreateUserUseCase {
   constructor(private usersRepository: IUsersRepository){}
 
@@ -19,18 +50,6 @@ class CreateUserUseCase {
       return 'error'
     
     if(uf === 'MG') {
-      // let parcela = Number(emprestimo) / parcelas
-      // let cliente = {
-      //   saldoDevedor: [],
-      //   juros: [],
-      //   saldoDevedorAjustado: [],
-      //   valorParcela: []
-      // };
-      // for(let index = 0; index < parcelas; index += 1) {
-      //   if(parcelas > 1 && parcela) {
-
-      //   }
-      // }
       return 1
     }
     

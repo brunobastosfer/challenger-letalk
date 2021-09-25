@@ -23,6 +23,12 @@ const Form = () => {
       uf,
       parcelas,
     })
+    setCpf('');
+    setUf('');
+    setDataNascimento('');
+    setEmprestimo('');
+    setNome('');
+    setParcelas(0);
   }
 
   return (
