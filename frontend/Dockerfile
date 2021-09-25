@@ -1,18 +1,13 @@
 FROM node
 
-RUN npm install -g http-server
+WORKDIR /usr/challengerletalk/app
 
-WORKDIR /client
-
-COPY package*.json /client/
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /client/
-
-RUN npm run build
+COPY . .
 
 EXPOSE 3000
 
-# CMD ["http-server", "public"] && ["npm", "start"]
 CMD ["npm", "start"]

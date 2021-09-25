@@ -1,35 +1,35 @@
 version: "3"
 services:
   react-app:
-    container_name: client-container
-    build: ./frontend
-    restart: always
+    image: react-app
     stdin_open: true
     ports:
       - "3000:3000"
-    depends_on:
-      - api-server
+    networks:
+      - letalk-app
   api-server:
-    container_name: api-container
-    build: ./backend
-    restart: always
+    image: api-server
     ports:
       - "3333:3333"
+    networks:
+      - letalk-app
     depends_on:
       - database
   database:
-    container_name: postgres-backend
     image: postgres
-    restart: always
     ports: 
       - 5432:5432
+    networks:
+      - letalk-app
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=letalk
     volumes:
       - pgdata:/data/postgres
-
+networks:
+  letalk-app:
+    driver: bridge
 volumes:
   pgdata:
     driver: local
