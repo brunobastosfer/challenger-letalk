@@ -1,5 +1,5 @@
-import { User } from "src/modules/entities/User";
-import { IUsersRepository } from "src/modules/repositories/IUsersRepository";
+import { User } from "../../entities/User"
+import { IUsersRepository } from "../../repositories/IUsersRepository"
 
 class ListUsersUseCase {
   constructor(private usersRepository: IUsersRepository){}
